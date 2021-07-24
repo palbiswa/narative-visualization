@@ -1,8 +1,8 @@
 async function drawCases(){
     //console.log("drawCases");   
-    var  casesData =  await d3.csv('https://github.com/palbiswa/narative-visualization/blob/main/covid-19-cases-usa-by-state.csv');
+    //var  casesData =  await d3.csv('https://github.com/palbiswa/narative-visualization/blob/main/covid-19-cases-usa-by-state.csv');
     
-    //var casesData = await d3.csv("/covid-19-cases-usa-by-state.csv");    
+    var casesData = await d3.csv("/covid-19-cases-usa-by-state.csv");    
     var casesData= casesData .map(function(d) {
         return {
             State: d.State,
