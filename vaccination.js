@@ -2,7 +2,7 @@ async function drawVaccination(type){
     //console.log("drawCases" + type);       
     //const  casesData =  await d3.csv('https://github.com/palbiswa/narative-visualization/blob/main/covid-19-cases-usa-by-state.csv');
     
-    var casesData = await d3.csv("/current-usa-July-20-2021-vaccinated.csv"); 
+    var casesData = await d3.csv("/narative-visualization/current-usa-July-20-2021-vaccinated.csv"); 
     
     // Set Dimension
     var margin = {top: 30, right: 120, bottom: 100, left: 70},
