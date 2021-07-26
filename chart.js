@@ -4,15 +4,15 @@ async function drawChart(type){
     var drawBar;
     var catagory;
     if(type == "case"){        
-        casesData = await d3.csv("/covid-19-cases-usa-by-state.csv");
+        casesData = await d3.csv("/narative-visualization/covid-19-cases-usa-by-state.csv");
         drawBar = "#drawCaseBar";
         catagory = "Avg";
     } else if (type == "death"){
-        casesData = await d3.csv("/covid-19-deaths-usa-by-state.csv");
+        casesData = await d3.csv("/narative-visualization/covid-19-deaths-usa-by-state.csv");
         drawBar = "#drawDeathBar";
         catagory = "Avg";
     } else {
-        casesData = await d3.csv("/current-usa-July-20-2021-vaccinated.csv");
+        casesData = await d3.csv("/narative-visualization/current-usa-July-20-2021-vaccinated.csv");
         drawBar = "#drawVaccinationBar";
         catagory = type; 
     }    
