@@ -24,8 +24,8 @@ $(document).ready(function(){
         $("#caseClicked").css('background-color', 'grey');
         $("#deathClicked").css('background-color', '#f1f1f1');
         $("#vaccineClicked").css('background-color', '#f1f1f1');
-        $("#drawCaseBar").empty();
-        drawCases();
+        $("#drawCaseBar").empty();        
+        drawChart('case');
 
       });
 
@@ -40,8 +40,8 @@ $(document).ready(function(){
         $("#caseClicked").css('background-color', '#f1f1f1');
         $("#deathClicked").css('background-color', 'grey');
         $("#vaccineClicked").css('background-color', '#f1f1f1');
-        $("#drawDeathBar").empty();
-        drawDeath();
+        $("#drawDeathBar").empty();        
+        drawChart('death');
     });
 
     $("#vaccineClicked").add(vaccineClickedButton).click(function(){
@@ -56,15 +56,15 @@ $(document).ready(function(){
         $("#deathClicked").css('background-color', '#f1f1f1');
         $("#vaccineClicked").css('background-color', 'grey');
         $("input[name=doses][value=" + 'Doses-Administered' + "]").prop('checked', true);
-        $("#drawVaccinationBar").empty();
-        drawVaccination('Doses-Administered');
+        $("#drawVaccinationBar").empty();        
+        drawChart('Doses-Administered');
     });
 
     $("input[type='radio']").click(function(){
         var radioValue = $("input[name='doses']:checked").val();
         if(radioValue){            
             $("#drawVaccinationBar").empty();
-            drawVaccination(radioValue);
+            drawChart(radioValue);
         }
     });
 });
