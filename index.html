@@ -5,6 +5,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src='https://d3js.org/d3.v5.min.js'></script>
 <script type='text/javascript' src='script.js'></script>
+<script type='text/javascript' src='cases.js'></script>
+<script type='text/javascript' src='death.js'></script>
+<script type='text/javascript' src='vaccination.js'></script>
 <script type='text/javascript' src='chart.js'></script>
 
 </head>
@@ -21,11 +24,11 @@
   <div id="homeDes">
     <p class="homeHeader">USA State Wise Covid-19 impact and it's recovery through vaccination. </p>
     <p class="bodyText">This narrative visualization will show COVID-19 impact across US states from January 2020 to July 2021 and how it is recovering from the pandemic.</p>
-    <p class="bodyText">It will show state wise Covid-19 Cases, statewide Covid Deaths and state wide Vaccination progress in three separate Scenes towards it recovery over time.</p>
+    <p class="bodyText">It will show statewise Covid-19 Cases, state wide Covid Deaths and state wide Vaccination progress in three separate Scenes towards it recovery over time.</p>
     <p class="bodyText">The first Scene will show the average covid cases reported from January 2020 to July 2021</p>
     <p class="bodyText">The second Scene will show the average covid deaths impacted each state from January 2020 to July 2021</p>
     <p class="bodyText">The third Scene will show  covid vaccination progress as on July 2021 and how each states is moving towards recovery through vaccinations. Here you may explore vaccination progress in different categories/paths to get state-wise progress. </p>
-    <p class="bodyText">These categories/paths are:</p>
+    <p class="bodyText">These catagories/paths are:</p>
     <ul>
       <li class="bodyText">How many Doses Administered</li>
       <li class="bodyText">How many People Vaccinated</li>
@@ -38,23 +41,23 @@
   </div>
   <div id="cases" class="hide">
     <p class="homeHeader">USA State Wise Data - [Covid-19 Cases] </p>
-    <p class="bodyText">This scene shows COVID-19 cases impact for each  states. Also, it indicates which state has highest number of case and what is that average value</p> 
+    <p class="bodyText">This scene shows COVID-19 cases impact for each  state. Also, it indicates which state has highest number of case and what is that average value</p> 
     <div id="drawCaseBar"></div>
     <p class="bodyText">Click Button Next - Scene 2 to proceed.</p> 
     <a id="deathClickedButton" href="#" class="button">Next - Scene 2</a>      
   </div>  
   <div id="death" class="hide">
     <p class="homeHeader">USA State Wise Impact - [Covid-19 Deaths] </p>
-    <p class="bodyText">This scene shows COVID-19 deaths for each  states. Also it indicates which state has highest number of deaths and what is that average value</p> 
+    <p class="bodyText">This scene shows COVID-19 deaths for each  state. Also, it indicates which state has highest number of deaths and what is that average value</p> 
     <div id="drawDeathBar"></div>
     <p class="bodyText">Click Button Next - Scene 3 to proceed.</p> 
     <a id="vaccineClickedButton" href="#" class="button">Next - Scene 3</a>
   </div>
   <div id="vaccine" class="hide">
     <p class="homeHeader">USA State Wise Recovery - [Covid-19 Vaccination Progress] </p>
-    <p class="bodyText">This scene shows COVID-19 Vaccination progress for each  states. Also, it indicates which state has highest coverage or distribution 
-       and what is that value.You may select a particular path/catagory to explore more.In each catagory you may mouseover the chart,highlight details and for the highlighted state it will show details in tool-tip to indicate progress towords recovery.</p> 
-    <p class="radio">Please select a radio catagory to get details in each type.</p>
+    <p class="bodyText">This scene shows COVID-19 Vaccination progress for each  state. Also, it indicates which state has highest distribution 
+       and what is that value. You may select a particular path/category to explore more. In each category you may mouseover the chart and highlight details in tooltip for the highlighted state to see progress towards recovery.</p> 
+    <p class="radio">Please select a radio category to get details in each type.</p>
     <p class="bodyText"> 
         <label ><input type="radio" name="doses" value="Doses-Administered">Doses Administered</label> 
         <label><input type="radio" name="doses" value="People-Vaccinated">People Vaccinated</label>
