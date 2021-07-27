@@ -18,7 +18,7 @@ async function drawChart(type){
     }    
     
     // Set Dimension
-    var margin = {top: 30, right: 120, bottom: 100, left: 70},
+    var margin = {top: 30, right: 120, bottom: 120, left: 70},
     width = 1000 - margin.left - margin.right,
     height = 350 - margin.top - margin.bottom; 
     
