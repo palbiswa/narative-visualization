@@ -73,7 +73,7 @@ function numberWithCommas(param) {
     return param.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-async function calculateSecondMax(arr,type){    
+function calculateSecondMax(arr,type){    
     const typeArray = [];
     arr.forEach(item => {
         typeArray.push(item[type]);        
