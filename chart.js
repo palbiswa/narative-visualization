@@ -66,20 +66,39 @@ async function drawChart(type){
 
     // append data
     if(catagory === 'Avg'){
-        caseBar.enter()
-      .append("rect")
-      .merge(caseBar)      
-        .attr("x", function(d) { return x(d.State); })
-        .attr("y", function(d) { return y(d[catagory]); })
-        .attr("width", x.bandwidth())
-        .attr("height", function(d) { return height - y(d[catagory]); })
+      caseBar.enter()
+      .append("rect") 
+      .on("mousemove", function(d){                      
+            tooltip
+            .style("left", d3.event.pageX - 50 + "px")
+            .style("top", d3.event.pageY - 70 + "px")
+            .style("display", "inline-block")          
+            .html("State :" + d.State +           
+            "<br>" +  type + ": "+ numberWithCommas(d[catagory]))           
+            d3.select(this).attr('fill', '#065B11');        
+        
+      })      
+      .on("mouseout", function(d){ tooltip.style("display", "none");
+        d3.select(this).transition().duration(250)
         .attr("fill",function(d){
-            if(d['Avg'] == maxCount){
+            if(d[type] == maxCount){
                 return "#404D92" ;
             }else {
                 return "#19beca" ;  
             }
-        });  
+        })
+      }) 
+        .attr("x", function(d) { return x(d.State); })
+        .attr("y", function(d) { return y(d[catagory]); })        
+        .attr("width", x.bandwidth())
+        .attr("fill",function(d){
+            if(d[type] == maxCount){
+                return "#404D92" ;
+            }else {
+                return "#19beca" ;  
+            }
+        })
+        .attr("height", function(d) { return height - y(d[catagory]); });  
     }
     else {
         caseBar.enter()
