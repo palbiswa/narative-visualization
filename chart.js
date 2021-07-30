@@ -81,7 +81,7 @@ async function drawChart(type){
       .on("mouseout", function(d){ tooltip.style("display", "none");
         d3.select(this).transition().duration(250)
         .attr("fill",function(d){
-            if(d[type] == maxCount){
+            if(d['Avg'] == maxCount){
                 return "#404D92" ;
             }else {
                 return "#19beca" ;  
@@ -92,7 +92,7 @@ async function drawChart(type){
         .attr("y", function(d) { return y(d[catagory]); })        
         .attr("width", x.bandwidth())
         .attr("fill",function(d){
-            if(d[type] == maxCount){
+            if(d['Avg'] == maxCount){
                 return "#404D92" ;
             }else {
                 return "#19beca" ;  
